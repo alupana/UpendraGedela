@@ -35,7 +35,7 @@ const BRAND = {
   name: "Upendra Gedela",
   role: "Cinematographer",
   tagline: "Stories in motion. Light as a language.",
-  email: "hello@aaravcinema.com",
+  email: "upendragedela85@gmail.com",
   phone: "+91 8555050020",
   location: "Hyderabad, India",
 };
@@ -49,55 +49,55 @@ const PHOTOS: Array<{
   width: number;
   height: number;
 }> = [
-  {
-    id: "p1",
-    src: "https://images.unsplash.com/photo-1511964918335-2f46f0b5a0e2?q=80&w=1600&auto=format&fit=crop",
-    alt: "Golden hour portrait on 35mm",
-    tags: ["portrait", "35mm", "golden hour"],
-    width: 1600,
-    height: 1067,
-  },
-  {
-    id: "p2",
-    src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1600&auto=format&fit=crop",
-    alt: "Urban night scene – neon", 
-    tags: ["night", "neon", "urban"],
-    width: 1600,
-    height: 900,
-  },
-  {
-    id: "p3",
-    src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop",
-    alt: "Wide landscape establishing shot",
-    tags: ["landscape", "establishing", "wide"],
-    width: 1600,
-    height: 900,
-  },
-  {
-    id: "p4",
-    src: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600&auto=format&fit=crop",
-    alt: "Documentary close-up",
-    tags: ["documentary", "close-up"],
-    width: 1600,
-    height: 1067,
-  },
-  {
-    id: "p5",
-    src: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop",
-    alt: "Product cinematic lighting",
-    tags: ["product", "studio", "commercial"],
-    width: 1600,
-    height: 1067,
-  },
-  {
-    id: "p6",
-    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
-    alt: "Silhouette against sunset",
-    tags: ["silhouette", "sunset", "drama"],
-    width: 1600,
-    height: 900,
-  },
-];
+    {
+      id: "p1",
+      src: "/images/QUTUB.jpg", // Changed from "./assets/images/pigion.jpg"
+      alt: "Golden hour portrait on 35mm",
+      tags: ["portrait", "35mm", "golden hour"],
+      width: 1600,
+      height: 1067,
+    },
+    {
+      id: "p2",
+      src: "/images/paint.jpg",
+      alt: "Urban night scene – neon",
+      tags: ["night", "neon", "urban"],
+      width: 1600,
+      height: 900,
+    },
+    {
+      id: "p3",
+      src: "/images/pigion.jpg",
+      alt: "Wide landscape establishing shot",
+      tags: ["landscape", "establishing", "wide"],
+      width: 1600,
+      height: 900,
+    },
+    {
+      id: "p4",
+      src: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600&auto=format&fit=crop",
+      alt: "Documentary close-up",
+      tags: ["documentary", "close-up"],
+      width: 1600,
+      height: 1067,
+    },
+    {
+      id: "p5",
+      src: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop",
+      alt: "Product cinematic lighting",
+      tags: ["product", "studio", "commercial"],
+      width: 1600,
+      height: 1067,
+    },
+    {
+      id: "p6",
+      src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop",
+      alt: "Silhouette against sunset",
+      tags: ["silhouette", "sunset", "drama"],
+      width: 1600,
+      height: 900,
+    },
+  ];
 
 // Video items – use YouTube IDs. Thumbnails are generated automatically via img.youtube.com
 const VIDEOS: Array<{
@@ -106,16 +106,18 @@ const VIDEOS: Array<{
   youtubeId: string;
   tags: string[];
 }> = [
-  { id: "v1", title: "Spec Ad – Coffee Brand", youtubeId: "ysz5S6PUM-U", tags: ["commercial", "product"] },
-  { id: "v2", title: "Short Film – The Alley", youtubeId: "ScMzIvxBSi4", tags: ["short film", "narrative"] },
-  { id: "v3", title: "Music Video – Echoes", youtubeId: "aqz-KE-bpKQ", tags: ["music video", "performance"] },
-];
+    { id: "v1", title: "Em Ledu", youtubeId: "QSuFKByG_R0", tags: ["Short Film", "Drama"] },
+    { id: "v2", title: "Panic Button - PSA", youtubeId: "suwIRZ9wLT4", tags: ["Awareness", "Public Service Announcement"] },
+    { id: "v3", title: "Save Water - PSA", youtubeId: "H0ibKa4zXKo", tags: ["Environmental", "Public Service Announcement"] },
+  ];
 
 // Social links – swap your handles/URLs
 const SOCIALS = [
-  { name: "Instagram", icon: Instagram, href: "https://instagram.com/your_handle", handle: "@your_handle" },
-  { name: "Facebook", icon: Facebook, href: "https://facebook.com/your_page", handle: "/your_page" },
-  { name: "YouTube", icon: Youtube, href: "https://youtube.com/@your_channel", handle: "@your_channel" },
+  {
+    name: "Instagram", icon: Instagram, href: "https://instagram.com/ft.upii._", handle: "@ᴜᴘᴇɴᴅʀᴀ"
+  },
+  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/share/172JEGxper/", handle: "@ᴜᴘᴇɴᴅʀᴀ" },
+  { name: "YouTube", icon: Youtube, href: "https://youtube.com/@upendra_xi?feature=shared", handle: "@ᴜᴘᴇɴᴅʀᴀ" },
 ];
 
 // ---------------------------
@@ -253,7 +255,7 @@ export default function CinematographerPortfolio() {
       </section>
 
       {/* PHOTOS */}
-      <section id="photos" className={`${SECTION} bg-zinc-50/60`}> 
+      <section id="photos" className={`${SECTION} bg-zinc-50/60`}>
         <div className={`${CONTAINER}`}>
           <motion.div {...fadeUp} className="mb-8 flex flex-wrap items-center justify-between gap-4">
             <div>
@@ -316,7 +318,7 @@ export default function CinematographerPortfolio() {
       </section>
 
       {/* VIDEOS */}
-      <section id="videos" className={`${SECTION}`}> 
+      <section id="videos" className={`${SECTION}`}>
         <div className={`${CONTAINER}`}>
           <motion.div {...fadeUp} className="mb-8">
             <h2 className="text-3xl font-semibold">Video Work</h2>
@@ -361,7 +363,7 @@ export default function CinematographerPortfolio() {
       </section>
 
       {/* SOCIALS */}
-      <section id="socials" className={`${SECTION} bg-zinc-50/60`}> 
+      <section id="socials" className={`${SECTION} bg-zinc-50/60`}>
         <div className={`${CONTAINER}`}>
           <motion.div {...fadeUp} className="mb-8">
             <h2 className="text-3xl font-semibold">Social</h2>
@@ -401,7 +403,7 @@ export default function CinematographerPortfolio() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className={`${SECTION}`}> 
+      <section id="contact" className={`${SECTION}`}>
         <div className={`${CONTAINER}`}>
           <motion.div {...fadeUp} className="mb-8">
             <h2 className="text-3xl font-semibold">Let’s Collaborate</h2>
