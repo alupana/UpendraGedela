@@ -54,22 +54,6 @@ const PHOTOS: Array<{
       height: 1067,
     },
     {
-      id: "p2",
-      src: "/images/paint.jpg",
-      alt: "Urban night scene – neon",
-      tags: ["night", "neon", "urban"],
-      width: 1600,
-      height: 900,
-    },
-    {
-      id: "p3",
-      src: "/images/pigion.jpg",
-      alt: "Wide landscape establishing shot",
-      tags: ["landscape", "establishing", "wide"],
-      width: 1600,
-      height: 900,
-    },
-    {
       id: "p4",
       src: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600&auto=format&fit=crop",
       alt: "Documentary close-up",
@@ -224,6 +208,7 @@ export default function CinematographerPortfolio() {
                 fill
                 className="object-cover"
               />
+
             </div>
             <div className="pointer-events-none absolute -left-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-pink-300/50 to-purple-300/50 blur-2xl" />
             <div className="pointer-events-none absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-gradient-to-br from-blue-300/50 to-teal-300/50 blur-2xl" />
