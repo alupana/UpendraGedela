@@ -221,7 +221,8 @@ export default function CinematographerPortfolio() {
               <Image
                 src={PHOTOS[0].src}
                 alt={PHOTOS[0].alt}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
             <div className="pointer-events-none absolute -left-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-pink-300/50 to-purple-300/50 blur-2xl" />
@@ -297,7 +298,14 @@ export default function CinematographerPortfolio() {
                   className="group relative block w-full overflow-hidden rounded-2xl ring-1 ring-zinc-200"
                   aria-label={`Open photo: ${p.alt}`}
                 >
-                  <Image src={p.src} alt={p.alt} className="w-full object-cover transition duration-300 group-hover:scale-105" />
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    <Image
+                      src={p.src}
+                      alt={p.alt}
+                      fill
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
                   <figcaption className="pointer-events-none absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/50 to-transparent p-3 text-xs text-white opacity-0 transition group-hover:opacity-100">
                     <span className="line-clamp-2 pr-2">{p.alt}</span>
                     <span className="flex shrink-0 gap-1">
@@ -331,7 +339,15 @@ export default function CinematographerPortfolio() {
                       className="block w-full"
                       aria-label={`Play ${v.title}`}
                     >
-                      <Image src={ytThumb(v.youtubeId)} alt={v.title} className="aspect-video w-full object-cover transition duration-300 group-hover:scale-105" />
+                      <div className="relative aspect-video w-full overflow-hidden">
+                        <Image
+                          src={ytThumb(v.youtubeId)}
+                          alt={v.title}
+                          fill
+                          className="object-cover transition duration-300 group-hover:scale-105"
+                        />
+                      </div>
+
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="rounded-full bg-black/50 p-3 backdrop-blur">
                           <Play className="h-6 w-6 text-white" />
