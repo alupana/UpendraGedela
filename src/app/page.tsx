@@ -1,14 +1,14 @@
 "use client"
 import React, { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Camera, Film, Instagram, Facebook, Youtube, Mail, Link as LinkIcon, Play, X, ArrowUpRight, MapPin, Phone } from "lucide-react";
+import { Camera, Film, Instagram, Facebook, Youtube, Mail, ExternalLink, Play, X, ArrowUpRight, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-
+import { easeInOut } from "framer-motion";
 /**
  * Cinematographer Portfolio – Single File React Component
  * ------------------------------------------------------
@@ -21,11 +21,6 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
  *   - Social links (Instagram / Facebook / YouTube) with follower callouts
  *   - Contact section (mailto fallback) with location and phone
  *   - Subtle animations and polished, modern UI
- *
- * 🔧 How to use:
- *   1) Ensure Tailwind + shadcn/ui + framer-motion + lucide-react are installed.
- *   2) Drop this file anywhere in your app, e.g. `app/portfolio/page.tsx` or `src/pages/index.tsx`.
- *   3) Replace the content in the DATA BLOCKS below with your real photos, videos, and socials.
  */
 
 // ---------------------------
@@ -51,7 +46,7 @@ const PHOTOS: Array<{
 }> = [
     {
       id: "p1",
-      src: "/images/QUTUB.jpg", // Changed from "./assets/images/pigion.jpg"
+      src: "/images/QUTUB.jpg",
       alt: "Golden hour portrait on 35mm",
       tags: ["portrait", "35mm", "golden hour"],
       width: 1600,
@@ -126,12 +121,12 @@ const SOCIALS = [
 const CONTAINER = "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8";
 const SECTION = "py-16 sm:py-20";
 
-// Motion helpers
+// Motion helpers - FIXED: Changed ease to use proper cubic bezier array
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: "easeOut" },
+  transition: { duration: 0.6, ease: easeInOut },
 };
 
 // Smooth scroll for in-page anchors (no external dep needed)
@@ -385,7 +380,7 @@ export default function CinematographerPortfolio() {
                     <div className="mt-4 flex gap-2">
                       <Button asChild className="rounded-xl">
                         <a href={s.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
-                          <LinkIcon className="h-4 w-4" /> Visit
+                          <ExternalLink className="h-4 w-4" /> Visit
                         </a>
                       </Button>
                       <Button asChild variant="outline" className="rounded-xl">
@@ -406,23 +401,28 @@ export default function CinematographerPortfolio() {
       <section id="contact" className={`${SECTION}`}>
         <div className={`${CONTAINER}`}>
           <motion.div {...fadeUp} className="mb-8">
-            <h2 className="text-3xl font-semibold">Let’s Collaborate</h2>
+            <h2 className="text-3xl font-semibold">Let's Collaborate</h2>
             <p className="mt-1 text-zinc-600">Share your project brief, dates, and references.</p>
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2">
             <Card className="rounded-2xl">
               <CardContent className="p-6">
-                <form action={`mailto:${BRAND.email}`} method="post" encType="text/plain" className="space-y-3">
+                <div className="space-y-3">
                   <Input placeholder="Your name" required className="rounded-xl" />
                   <Input type="email" placeholder="Your email" required className="rounded-xl" />
                   <Input placeholder="Subject / Project" className="rounded-xl" />
                   <Textarea placeholder="Tell me about your project…" className="min-h-[120px] rounded-xl" />
                   <div className="flex items-center gap-3">
-                    <Button type="submit" className="rounded-xl">Send</Button>
-                    <Button type="reset" variant="outline" className="rounded-xl">Reset</Button>
+                    <Button
+                      onClick={() => window.location.href = `mailto:${BRAND.email}`}
+                      className="rounded-xl"
+                    >
+                      Send
+                    </Button>
+                    <Button variant="outline" className="rounded-xl">Reset</Button>
                   </div>
-                </form>
+                </div>
               </CardContent>
             </Card>
 
