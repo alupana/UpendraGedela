@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { easeInOut } from "framer-motion";
+import Image from "next/image";
 /**
  * Cinematographer Portfolio – Single File React Component
  * ------------------------------------------------------
@@ -217,7 +218,7 @@ export default function CinematographerPortfolio() {
 
           <motion.div {...fadeUp} className="relative">
             <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl ring-1 ring-zinc-200">
-              <img
+              <Image
                 src={PHOTOS[0].src}
                 alt={PHOTOS[0].alt}
                 className="h-full w-full object-cover"
@@ -296,7 +297,7 @@ export default function CinematographerPortfolio() {
                   className="group relative block w-full overflow-hidden rounded-2xl ring-1 ring-zinc-200"
                   aria-label={`Open photo: ${p.alt}`}
                 >
-                  <img src={p.src} alt={p.alt} className="w-full object-cover transition duration-300 group-hover:scale-105" />
+                  <Image src={p.src} alt={p.alt} className="w-full object-cover transition duration-300 group-hover:scale-105" />
                   <figcaption className="pointer-events-none absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/50 to-transparent p-3 text-xs text-white opacity-0 transition group-hover:opacity-100">
                     <span className="line-clamp-2 pr-2">{p.alt}</span>
                     <span className="flex shrink-0 gap-1">
@@ -330,7 +331,7 @@ export default function CinematographerPortfolio() {
                       className="block w-full"
                       aria-label={`Play ${v.title}`}
                     >
-                      <img src={ytThumb(v.youtubeId)} alt={v.title} className="aspect-video w-full object-cover transition duration-300 group-hover:scale-105" />
+                      <Image src={ytThumb(v.youtubeId)} alt={v.title} className="aspect-video w-full object-cover transition duration-300 group-hover:scale-105" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="rounded-full bg-black/50 p-3 backdrop-blur">
                           <Play className="h-6 w-6 text-white" />
@@ -401,7 +402,7 @@ export default function CinematographerPortfolio() {
       <section id="contact" className={`${SECTION}`}>
         <div className={`${CONTAINER}`}>
           <motion.div {...fadeUp} className="mb-8">
-            <h2 className="text-3xl font-semibold">Let's Collaborate</h2>
+            <h2 className="text-3xl font-semibold">Let&apos;s Collaborate</h2>
             <p className="mt-1 text-zinc-600">Share your project brief, dates, and references.</p>
           </motion.div>
 
@@ -478,7 +479,7 @@ export default function CinematographerPortfolio() {
               <X className="h-5 w-5" />
             </button>
             {lightbox.photo && (
-              <img src={lightbox.photo.src} alt={lightbox.photo.alt} className="max-h-[80vh] w-full object-contain bg-black" />
+              <Image src={lightbox.photo.src} alt={lightbox.photo.alt} className="max-h-[80vh] w-full object-contain bg-black" />
             )}
           </div>
         </DialogContent>
